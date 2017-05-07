@@ -23,7 +23,7 @@ function testBool(anotherInput){
 thisIsAFunction(3);
 //simple for loop
 for (var forLoopVar=0; forLoopVar<5; forLoopVar++){
-	console.log(forLoopVar);
+	console.log(forLoopVar)
 }
 var hereIsAThing =0;
 while (testBool(hereIsAThing)){

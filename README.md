@@ -21,6 +21,13 @@ I think ill do this in python just to make it a little easier for reading the fi
 		I'm going to try to concat some of the lines so it looks enem more confusing. cant be too confused.
 
 
+---
+14:20	ok i think im done with this for now. it should be working at least with teh short script i gave it. 
 
+---
+#instructions
 
+just call the python script with a single argument, the name of the js script to be changed. 
+eg `python obfuscator.py testSctipt.js`
+it will create a new file called "newScript.js". i have provided a small test script that it works with. it will create a bunch of random variables to replace the old variable names and will concatinate lines together to be really confusing. i dont really want to read the new script. its a pain in my ass
 
