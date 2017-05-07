@@ -10,8 +10,8 @@ function thisIsAFunction(inputVar){
 }
 
 function testBool(anotherInput){
-	if (anotherInput<4){
-		return true
+	if (anotherInput<4){ //see if the input is less than 4
+		return true 
 	}
 	//else is not necissory here just want to add more reserve words
 	else{
