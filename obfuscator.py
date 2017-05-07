@@ -44,8 +44,9 @@ def stripQuotes(line):
 
 
 def createRandomVar():
-	letters="abcdefghijklmnopqrstufwxyz1234567890"
-	result=""
+	letters="abcdefghijklmnopqrstufwxyz"
+	result=random.choice(letters)
+	letters+="1234567890"
 	#create variables with length between 3 and 10
 	for i in range(random.randint(3, 10)):
 		result+=random.choice(letters)
@@ -79,13 +80,37 @@ if __name__=="__main__":
 	file=open("testScript.js","r")
 	# print stripQuotes("this is a 'test' string")
 	for line in file:
-		words=findVars(stripComments(line))
+		line=stripComments(line)
+		words=findVars(line)
 		#check to see if the list of vars is empty
 		if words:
 			for var in words:
 				if var in reserveWords:
 					continue
-				print var
+				if var not in varmap:
+					#create a new randon var. if it has been used before create a new random one untill we dont get a dup.
+					newRandVar=createRandomVar()
+					while newRandVar in newVars:
+						newRandVar=createRandomVar()
+
+					varmap[var]=newRandVar
+					newVars.append(newRandVar)
+				#replace all the old vars on the current line with the new ones
+				line=line.replace(var, varmap[var])
+		newScript.append(line)
+	
+
+		
+
+
+	file.close()
+	outputfile=open("newScript.js", "w+")
+	for line in newScript:
+		outputfile.write(line)
+	outputfile.close
+
+			
+
 
 
 
