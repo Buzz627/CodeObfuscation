@@ -25,9 +25,15 @@ I think ill do this in python just to make it a little easier for reading the fi
 14:20	ok i think im done with this for now. it should be working at least with teh short script i gave it. 
 
 ---
-#instructions
+##instructions
 
 just call the python script with a single argument, the name of the js script to be changed. 
 eg `python obfuscator.py testSctipt.js`
 it will create a new file called "newScript.js". i have provided a small test script that it works with. it will create a bunch of random variables to replace the old variable names and will concatinate lines together to be really confusing. i dont really want to read the new script. its a pain in my ass
 
+---
+##future
+(maybe)
+ont thing i could try to do but seems a bit too dificult right now would be to look at some objects and see if i can change some of the string names in side it 
+for example `{"start":2,"end":7}`
+in this JSON i could change "start" and "end" to be anything else. but it is kinda hard to tell when someting is a literal or just a JSON key. i think im going to stop here.
